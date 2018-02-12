@@ -1,0 +1,16 @@
+<h2>Product Search</h2>
+
+<form [formGroup]="formGroup">
+  Search 
+  <input formControlName="searchBox"
+          
+  />
+</form>
+
+<ul>
+  <li *ngFor="let product of products$ | async">
+     {{product.name}}
+  </li>
+
+</ul>
+ 

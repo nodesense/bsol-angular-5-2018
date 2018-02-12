@@ -1,0 +1,13 @@
+$highlight-color: yellow;
+
+input.ng-dirty {
+    background: $highlight-color
+}
+
+select.ng-dirty {
+    background: $highlight-color
+}
+
+input.ng-invalid {
+    border: 2px solid red;
+}

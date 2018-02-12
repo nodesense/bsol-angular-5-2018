@@ -1,0 +1,42 @@
+Guys, please don't use this for project work
+
+npm uninstall -g @angular/cli
+
+npm install -g @angular/cli
+
+
+ng g component components/header
+ng g component components/footer
+ng g component components/home
+ng g component components/about
+ng g component components/contact
+
+
+ng new product-app2
+
+
+--
+
+code.nodesense.ai
+
+username: nodesense
+password: bsol
+
+
+ng g module shared
+ng g component shared/components/like
+ng g pipe shared/pipes/power
+ng g pipe shared/pipes/filter
+ng g directive shared/directives/highlight
+ng g service shared/services/data
+
+
+ng g module product
+ng g component product/components/product-home
+ng g component product/components/product-edit
+ng g component product/components/product-list
+ng g component product/components/product-search
+ng g service product/services/product
+
+ng g class product/models/product
+ng g class product/models/brand

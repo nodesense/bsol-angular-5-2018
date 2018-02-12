@@ -1,0 +1,35 @@
+<h2>Contact</h2>
+
+<!-- # reference variable, 
+     ?. elvis -->
+
+<!-- address is refernce to real dom -->
+
+<input #addr />
+
+<p #address>
+ 
+</p>
+
+<span #myspan>
+
+</span>
+
+<button (click)="address.textContent=addr.value ">
+  Set Address
+</button>
+
+<p>Contact: {{contactTime?.start}} AM to 
+            {{contactTime?.end}} PM
+</p>
+
+<!-- access to directive instance # -->
+<p appHighlight color='yellow' #myHighlight="appHighlight">
+
+  Mouse over, I shall be yellow {{myHighlight.color}}
+
+</p>
+
+<button (click)="myHighlight.setNewColor('red')">
+  Call Directive Method
+</button>

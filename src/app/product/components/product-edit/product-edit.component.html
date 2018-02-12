@@ -1,0 +1,75 @@
+<h2>Product Edit - {{product.name}} </h2>
+
+<form #productForm="ngForm"
+      (ngSubmit)="saveProduct()"
+>
+
+  <p *ngIf="productForm.invalid">
+    Invalid Form
+  </p>
+
+  Name
+
+  <input name="name"
+         [(ngModel)]="product.name"
+
+         required
+         minlength="2"
+
+
+         #productName="ngModel"
+
+  />
+
+  <button (click)="productName.reset(product.name)"
+          type="button"
+  >
+    Clear Flags
+  </button>
+
+  <!-- productName is reference ngModel directive instance -->
+  <p *ngIf="productName.invalid">
+    Name is invalid, required, min 2 chars
+  </p>
+
+  <p *ngIf="productName.dirty">
+    Name is changed
+  </p>
+
+  Year
+
+  <input name="year"
+         [(ngModel)]="product.year"
+  />
+
+  Price
+  <input name="price"
+         [(ngModel)]="product.price"
+
+  />
+
+  <!-- brands$ | async -->
+
+  Brand
+  <select name="brandId"
+         [(ngModel)]="product.brandId">
+      
+         <option *ngFor="let brand of brands"
+                 [value]="brand.id"
+         >
+            {{brand.name}}
+         </option>
+        
+  </select>
+
+  <button type="submit" [disabled]="productForm.invalid">
+    Save
+  </button>
+
+  <div *ngIf="message">
+    <span class="warning">
+       {{message}}
+    </span>
+  </div>
+
+</form>

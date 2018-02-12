@@ -1,0 +1,66 @@
+<h2> {{title | uppercase}} </h2>
+<!-- 
+<h4>Site Likes  {{siteLikes}} </h4> -->
+
+<p> Observable Counter : {{siteLikes$ | async}} </p>
+
+
+<button (click)="incrementSiteLikes()">
+  +1 Site Likes
+</button>
+
+<p> Expression {{10 * 20}}</p>
+
+<p> Price {{price | currency:'INR' }} </p>
+
+<p> Today: {{today | date:'fullDate' | uppercase}} </p>
+
+<p>Counter {{counter}} </p>
+
+<p>Counter * 10  {{counter * 10}} </p>
+
+<p> Power Pipe {{2 | power:3}} </p>
+<p> Counter power {{counter | power:2}} </p>
+
+
+<!-- property binding [property binding] -->
+
+<input [value]="counter * 10" />
+
+<br />
+<!-- [value] shall convert to bind-value -->
+
+<input bind-value="counter" />
+
+<button [disabled]="counter % 2 == 0">
+  {{ counter % 2 == 0? "Event": "Odd"}}
+</button>
+
+<!-- event binding -->
+<button (click)="incr($event)">
+  +1
+</button>
+
+<button (click)="counter = counter - 1">
+  -1
+</button>
+
+
+<!-- use component from other module -->
+
+<p> Home Likes at Home Comp {{homeLikes}} </p>
+
+<button (click)="showLikes=!showLikes">
+  Show/Hide Like
+</button>
+
+<app-like *ngIf="showLikes"
+
+          [likes]="homeLikes" 
+          (likesChange)="homeLikes=$event">
+  
+</app-like>
+
+<app-like [(likes)]="counter">
+
+</app-like>

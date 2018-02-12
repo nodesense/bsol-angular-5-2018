@@ -1,0 +1,15 @@
+<div [ngClass]="{highlightColor: highlight}"
+
+      (mouseenter)="highlight = true"
+      (mouseleave)="highlight = false"
+
+>
+  <hr />
+  Copyrights @{{year}}, {{company}}
+
+  <button (click)="email()">
+    Email
+  </button>
+
+  <p> site Likes {{siteLikes}} </p>
+</div>

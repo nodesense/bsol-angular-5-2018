@@ -1,0 +1,57 @@
+<h2>About</h2>
+
+<!-- ngFor ngIf, ng-template -->
+<!-- two way binding -->
+
+<button (click)="show = !show">
+  {{ show? "Hide": "Show" }}
+</button>
+
+<button (click)="empty()">
+  Empty
+</button>
+
+<!-- ngModel from forms module -->
+
+<!-- two way binding -->
+
+<!-- sugar part -->
+
+<input [(ngModel)]="name" />
+
+<button (click)="addMember()">
+  Add
+</button>
+
+<!-- angular one -->
+
+<!-- 
+<input [ngModel]="name"
+       (ngModelChange)="name = $event"
+
+/> -->
+
+<p>
+  Name is {{name}}
+</p>
+
+<!-- ng 4 , else -->
+
+<div *ngIf="show else listNotShown">
+  <ul appHighlight color='lightgreen'>
+    <li *ngFor="let name of members">
+        {{name}}
+    </li>
+
+  </ul>
+
+</div>
+
+<!-- # is angular reference variable -->
+
+
+<ng-template #listNotShown>
+  <div>
+    <p>List is not shown</p>
+  </div>
+</ng-template>
